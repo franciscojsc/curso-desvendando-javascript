@@ -37,3 +37,22 @@ Named Function Expression
 var soma = function soma(a, b) {
     return a + b;
 }
+
+//Passando uma função como parâmentro
+
+var produto = {nome: 'Sapato', preco: 150};
+
+var formulaImpostoA = function (preco) {
+    return preco * 0.1;
+};
+
+var formulaImpostoB = function (preco) {
+    return preco * 0.3;
+};
+
+var calcularPreco = function (produto, formulaImposto) {
+    return produto.preco + formulaImposto(produto.preco);
+};
+
+calcularPreco(produto, formulaImpostoA);
+calcularPreco(produto, formulaImpostoB);
