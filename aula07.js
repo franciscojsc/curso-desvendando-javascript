@@ -73,7 +73,7 @@ helloWorld()()//Hello World!
 
 var getIdade = function (extra) {
 
-    console.log(arguments);
+    //console.log(arguments);
 
     return this.idade;//this se refere ao scope ao qual está invocando a função
 };
@@ -102,3 +102,37 @@ pessoa.getIdade(2);//22
 
 getIdade.call(pessoa, 2);//22
 getIdade.apply(pessoa, [2]);//22
+
+//Invocando uma função por meio do operador new
+
+//Funções Construtoras vs. Funções Fábrica
+
+//Funções Fábrica:
+
+var criarPessoa = function (nome, idade) {
+    return {
+        nome: nome,
+        idade: idade
+    };
+};
+
+console.log(criarPessoa("Pedro", 20));
+console.log(criarPessoa("Maria", 30));
+
+//Funções Construtoras:
+
+var Pessoa = function(nome, idade) {
+    this.nome = nome;
+    this.idade = idade;
+};
+
+console.log(new Pessoa("Pedro", 20));
+console.log(new Pessoa("Maria", 30));
+
+var pedro = {};
+Pessoa.call(pedro, "Pedro", 20);
+console.log(pedro);
+
+var maria = {};
+Pessoa.call(maria, "Maria", 30);
+console.log(maria);
