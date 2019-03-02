@@ -136,3 +136,15 @@ console.log(pedro);
 var maria = {};
 Pessoa.call(maria, "Maria", 30);
 console.log(maria);
+
+//Closures - significado -> fechamento, encaceramento, encerramento
+
+var olaMundo = function () {
+    var messagem = "Olá mundo!!";
+    return function () {
+        return messagem;
+    };
+};
+
+console.log(olaMundo());
+console.log(olaMundo()());
