@@ -72,6 +72,9 @@ helloWorld()()//Hello World!
 //Invocando uma função por meio de um Objeto
 
 var getIdade = function (extra) {
+
+    console.log(arguments);
+
     return this.idade;//this se refere ao scope ao qual está invocando a função
 };
 
