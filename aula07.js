@@ -68,3 +68,18 @@ var helloWorld = function () {
 
 helloWorld();//Function
 helloWorld()()//Hello World!
+
+//Invocando uma função por meio de um Objeto
+
+var getIdade = function () {
+    return this.idade;//this se refere ao scope ao qual está invocando a função
+};
+
+var pessoa = {
+    nome: "Jõao",
+    idade: 20,
+    getIdade: getIdade
+};
+
+getIdade();//undefined - se refere ao escopo global, o escopo global tem idade? senão o retorno será undefined
+pessoa.getIdade();//20
