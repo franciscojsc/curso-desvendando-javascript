@@ -83,3 +83,19 @@ var pessoa = {
 
 getIdade();//undefined - se refere ao escopo global, o escopo global tem idade? senão o retorno será undefined
 pessoa.getIdade();//20
+
+//Invocando uma função com call e apply
+
+/*
+ Call e Apply
+ Toda função possui os métodos call() e apply().
+ Eles são utilizados para indicar em qual escopo uma função deve ser executada.
+ 
+ A diferença é basicamente a forma como é utilizado:
+
+ função.call(escopo, parametro1, parametro2);
+ função.apply(escopo, parametros);
+ */
+
+getIdade.call(pessoa);//20
+getIdade.apply(pessoa);//20
