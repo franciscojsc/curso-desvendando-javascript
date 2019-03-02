@@ -56,3 +56,15 @@ var calcularPreco = function (produto, formulaImposto) {
 
 calcularPreco(produto, formulaImpostoA);
 calcularPreco(produto, formulaImpostoB);
+
+//Retornando uma função
+
+var helloWorld = function () {
+    return function () {
+        return "Hello World!";
+    };
+};
+
+
+helloWorld();//Function
+helloWorld()()//Hello World!
