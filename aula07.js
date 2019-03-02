@@ -71,7 +71,7 @@ helloWorld()()//Hello World!
 
 //Invocando uma função por meio de um Objeto
 
-var getIdade = function () {
+var getIdade = function (extra) {
     return this.idade;//this se refere ao scope ao qual está invocando a função
 };
 
@@ -81,8 +81,8 @@ var pessoa = {
     getIdade: getIdade
 };
 
-getIdade();//undefined - se refere ao escopo global, o escopo global tem idade? senão o retorno será undefined
-pessoa.getIdade();//20
+getIdade(2);//undefined - se refere ao escopo global, o escopo global tem idade? senão o retorno será undefined
+pessoa.getIdade(2);//22
 
 //Invocando uma função com call e apply
 
@@ -97,5 +97,5 @@ pessoa.getIdade();//20
  função.apply(escopo, parametros);
  */
 
-getIdade.call(pessoa);//20
-getIdade.apply(pessoa);//20
+getIdade.call(pessoa, 2);//22
+getIdade.apply(pessoa, [2]);//22
